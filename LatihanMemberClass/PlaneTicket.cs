@@ -35,7 +35,20 @@ namespace LatihanMemberClass
         }
         public void PrintSummary()
         {
-
+            Console.WriteLine("Origin: " + Origin);
+            Console.WriteLine("Destination: " + Destination);
+            Console.WriteLine("Cost: " + Cost + " (" + Currency + ")");
+            if (Currency == "USD")
+            {
+                int costInRupiah = int.Parse(Cost) * 15000;
+                Console.WriteLine("Convert to Rupiah: " + costInRupiah);
+            }
+            else if (Currency == "IDR")
+            {
+                int costInDolar = int.Parse(Cost) / 15000;
+                Console.WriteLine("Convert to Dolar: " + costInDolar);
+            }
+            Console.WriteLine();
         }
     }
 }
